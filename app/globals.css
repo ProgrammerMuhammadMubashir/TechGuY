@@ -1,42 +1,189 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-a {
-  color: inherit;
+
+
+.home {
+  min-height: 100vh;
+  position: relative;
+  background: #050b18;
+  color: #eaf0ff;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* ================= NEON BACKGROUND SPRAYS ================= */
+
+.home::before,
+.home::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(140px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.home::before {
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, #4da3ff 0%, transparent 70%);
+}
+
+.home::after {
+  bottom: -250px;
+  right: -150px;
+  background: radial-gradient(circle, #00c6ff 0%, transparent 70%);
+}
+.avatar{
+  border-radius: 50%;
+/* width: auto;
+height: auto; */
+}
+/* Optional extra spray */
+.neon-spray {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+  filter: blur(160px);
+  opacity: 0.35;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* ================= CONTENT ABOVE NEON ================= */
+
+.navbar,
+.hero {
+  position: relative;
+  z-index: 1;
+  
+}
+
+/* ================= NORMAL UI (NO NEON) ================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+background:linear-gradient(rgb(1, 1, 49),darkblue) ;
+position: fixed;
+width: 100%;
+z-index: 5;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #eaf0ff;
+}
+
+.nav-link{
+  list-style: none;
+
+  cursor: pointer;
+  color: #cfdcff;
+
+}
+.nav-Links {
+  display: flex;
+  gap: 28px;
+
+}
+.link_L{
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 90px);
+  padding: 0 60px;
+  max-width: 900px;
+}
+
+.intro {
+  color: #9bbcff;
+  font-size: 1.1rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 8px 0;
+  color: #ffffff;
+}
+
+.role {
+  font-size: 1.4rem;
+  color: #9bbcff;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d6e1ff;
+  max-width: 600px;
+}
+
+/* ================= BUTTONS (CLEAN) ================= */
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
+
+.primary-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #4da3ff;
+  color: #08162e;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  padding: 10px 10px;
+  background: transparent;
+  border: 1px solid #4da3ff;
+  color: #4da3ff;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media screen and (max-width:520px){
+  .navbar{
+    flex-direction: column;
+    gap: 3vh;
   }
+
+}
+@media screen and (max-width:850px){
+    .avatar{
+ display: none;
+    
+  }
+
+
 }
