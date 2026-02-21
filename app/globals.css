@@ -189,7 +189,49 @@ z-index: 5;
 
 
 }
+/* Fade-in and slide-up for intro text */
+.intro, .name, .role, .description {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 1s forwards;
+}
 
+/* Stagger the animations */
+.intro { animation-delay: 0.2s; }
+.name { animation-delay: 0.5s; }
+.role { animation-delay: 0.8s; }
+.description { animation-delay: 1.1s; }
+
+/* Buttons animation */
+.primary-btn, .secondary-btn {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 1s forwards;
+  animation-delay: 1.4s;
+}
+
+/* Avatar animation */
+.avatar {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeScale 1s forwards;
+  animation-delay: 1.7s;
+}
+
+/* Keyframes */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 /* ===== Global Loader ===== */
 .global-loader {
   position: fixed;
