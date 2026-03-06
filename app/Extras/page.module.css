@@ -52,8 +52,97 @@ font-size: 1.4rem;
   font-size:3rem;
 }
 
+
+
 @media screen and (max-width:768px) {
   .extras{
     font-size: 1.5rem;
+  }
+}
+
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  z-index: 1;
+  position: relative;
+  color: #4da3ff;
+}
+
+.notesContainer {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  z-index: 1;
+  position: relative;
+}
+
+.noteCard {
+  background: rgba(20, 30, 60, 0.85); /* dark transparent card */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noteCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.noteTitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #00c6ff;
+}
+
+.noteDesc {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #eaf0ff;
+}
+
+.noteBtns {
+  display: flex;
+  gap: 1rem;
+}
+
+.readBtn,
+.downloadBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+  transition: background 0.2s ease;
+}
+
+.readBtn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.readBtn:hover {
+  background-color: #4da3ff;
+}
+
+.downloadBtn {
+  background-color: #1e293b;
+  color: #4da3ff;
+}
+
+.downloadBtn:hover {
+  background-color: #111827;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .noteCard {
+    padding: 1rem;
   }
 }

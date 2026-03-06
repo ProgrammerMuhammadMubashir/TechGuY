@@ -1,18 +1,38 @@
-import React from 'react'
-import styles from "./page.module.css"
+import React from 'react';
+import styles from './page.module.css';
+
+const notesData = [
+  {
+    title: 'HTML Notes',
+    description: 'A complete guide to HTML for beginners and intermediates, covering all essential tags and best practices.',
+    readLink: 'https://drive.google.com/file/d/1ZFZcHH25Cqz3Z1Gt-dawER-UGTuZlJKa/view?usp=sharing',   // replace with your actual URL
+    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZFZcHH25Cqz3Z1Gt-dawER-UGTuZlJKa', // replace with actual PDF path
+  },
+
+];
+
 const Extras = () => {
   return (
-    <main className={styles.pivot} >
-      <div className={styles.blurBG}>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales consequat magna ante condimentum neque at luctus nibh finibus facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat porttitor ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus netus suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales consequat magna ante condimentum neque at luctus nibh finibus facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat porttitor ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus netus suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales consequat magna ante condimentum neque at luctus nibh finibus facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam.
+    <main className={styles.pivot}>
+      <h2 className={styles.sectionTitle}>📚 Notes Section</h2>
+      <div className={styles.notesContainer}>
+        {notesData.map((note, index) => (
+          <div key={index} className={styles.noteCard}>
+            <h3 className={styles.noteTitle}>{note.title}</h3>
+            <p className={styles.noteDesc}>{note.description}</p>
+            <div className={styles.noteBtns}>
+              <a href={note.readLink} target="_blank" rel="noopener noreferrer" className={styles.readBtn}>
+                Read Online
+              </a>
+              <a href={note.downloadLink} download className={styles.downloadBtn}>
+                Download
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className={styles.extras}>
-        Coming soon - With some Stunning Stuff
-</div>
-
     </main>
+  );
+};
 
-  )
-}
-
-export default Extras
+export default Extras;
