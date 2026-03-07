@@ -8,6 +8,7 @@ const notesData = [
     readLink: 'https://drive.google.com/file/d/1ZFZcHH25Cqz3Z1Gt-dawER-UGTuZlJKa/view?usp=sharing',   // replace with your actual URL
     downloadLink: 'https://drive.google.com/uc?export=download&id=1ZFZcHH25Cqz3Z1Gt-dawER-UGTuZlJKa', // replace with actual PDF path
   },
+  
 
 ];
 
@@ -15,7 +16,7 @@ const Extras = () => {
   return (
     <main className={styles.pivot}>
       <h2 className={styles.sectionTitle}>📚 Notes Section</h2>
-      <div className={styles.notesContainer}>
+     <div className={styles.notesContainer}>
         {notesData.map((note, index) => (
           <div key={index} className={styles.noteCard}>
             <h3 className={styles.noteTitle}>{note.title}</h3>
@@ -31,6 +32,7 @@ const Extras = () => {
           </div>
         ))}
       </div>
+  
     </main>
   );
 };
