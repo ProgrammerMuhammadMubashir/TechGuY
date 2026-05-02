@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "TechGuY - Muhammad Mubashir",
   description: "",
+  google-site-verification:"de0_wvH7F-lMA9uGxsepqp56tHb6WVVFOR5lZ1-s4I8"
 };
 
 export default function RootLayout({ children }) {
